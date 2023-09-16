@@ -19,6 +19,7 @@ class PointTest {
         assertThat(out).isEqualTo(expected, withPrecision(0.01));
     }
 
+    @Test
     void when01to31then3() {
         double expected = 3;
         int x1 = 0;
@@ -29,6 +30,7 @@ class PointTest {
         assertThat(out).isEqualTo(expected, withPrecision(0.01));
     }
 
+    @Test
     void when12to52then4() {
         double expected = 4;
         int x1 = 1;
