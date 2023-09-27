@@ -37,7 +37,7 @@ public class MatrixCheck {
             if (board[el][el] == 'X') {
                 boolean vertical = monoVertical(board, el);
                 boolean horizontal = monoHorizontal(board, el);
-                if (vertical && horizontal == true) {
+                if (vertical || horizontal == true) {
                     result = true;
                     break;
                 }
