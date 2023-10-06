@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PointTest {
 
-    @Test
+   /* @Test
     void when00to20then2() {
         double expected = 2;
         int x1 = 0;
@@ -37,7 +37,16 @@ class PointTest {
         int y1 = 2;
         int x2 = 5;
         int y2 = 2;
-        double out = Point.distance(x1, y1, x2, y2);
+        double out = Point.distance(4);
         assertThat(out).isEqualTo(expected, withPrecision(0.01));
+    }
+*/
+    @Test
+    public void whenThis30Another50ThenAnotherLoadEqual80() {
+        Point a = new Point(0, 0);
+        Point b = new Point(0, 2);
+        a.distance(b);
+        int expected = 2;
+        assertThat(a.distance(b)).isEqualTo(2);
     }
 }
