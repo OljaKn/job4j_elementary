@@ -42,11 +42,20 @@ class PointTest {
     }
 */
     @Test
-    public void whenThis30Another50ThenAnotherLoadEqual80() {
-        Point a = new Point(0, 0);
-        Point b = new Point(0, 2);
+    public void when020To041Then2() {
+        Point a = new Point(0, 2, 0);
+        Point b = new Point(0, 4, 1);
         a.distance(b);
-        int expected = 2;
-        assertThat(a.distance(b)).isEqualTo(2);
+        double expected = 2;
+        assertThat(a.distance(b)).isEqualTo(expected, withPrecision(0.01));
+    }
+
+    @Test
+    public void when120To051Then3() {
+        Point a = new Point(1, 2, 0);
+        Point b = new Point(0, 5, 1);
+        a.distance(b);
+        double expected = 3.16;
+        assertThat(a.distance(b)).isEqualTo(expected, withPrecision(0.01));
     }
 }
