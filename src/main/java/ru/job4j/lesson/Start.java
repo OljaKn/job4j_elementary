@@ -1,6 +1,7 @@
 package ru.job4j.lesson;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -8,30 +9,31 @@ public class Start {
     List<Book> books = new ArrayList<>();
 
     void menu() {
-        Menu menu = new Menu();
+        boolean var = true;
+        Menu[] menu = {new GetAllBook(), new AddBook(), new RedactBook(), new DeleteBook()};
+        List<Menu> menu1 = new ArrayList<>(Arrays.asList(menu));
         Scanner scanner = new Scanner(System.in);
-        while (true) {
+        while (var) {
             System.out.println("\t" + "Меню: " + "\n"
-                    + "1. Вывести все книги." + "\n"
-                    + "2. Добавить книгу." + "\n"
-                    + "3. Редактировать книгу." + "\n"
-                    + "4. Удалить книгу.");
+                    + "0. Вывести все книги." + "\n"
+                    + "1. Добавить книгу." + "\n"
+                    + "2. Редактировать книгу." + "\n"
+                    + "3. Удалить книгу.");
             System.out.println("Выберите пункт меню: ");
             int in = scanner.nextInt();
-            if (in == 1) {
-                menu.getAllBook(books);
-            } else if (in == 2) {
-                menu.addBook(books);
-            } else if (in == 3) {
-                menu.redactBook(books);
-            } else if (in == 4) {
-                menu.deleteBook(books);
+            if (in >= menu1.size() || in < 0) {
+                System.out.println("Неверный ввод!");
+                continue;
             }
+            Menu menu2 = menu1.get(in);
+            var = menu2.run(books);
         }
     }
 
     public static void main(String[] args) {
         Start application = new Start();
+        Menu[] menu = {new GetAllBook(), new AddBook(), new RedactBook(), new DeleteBook()};
+        List<Menu> menu1 = new ArrayList<>(Arrays.asList(menu));
         application.menu();
     }
 }
