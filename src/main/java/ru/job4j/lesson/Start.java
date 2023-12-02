@@ -32,8 +32,6 @@ public class Start {
 
     public static void main(String[] args) {
         Start application = new Start();
-        Menu[] menu = {new GetAllBook(), new AddBook(), new RedactBook(), new DeleteBook()};
-        List<Menu> menu1 = new ArrayList<>(Arrays.asList(menu));
         application.menu();
     }
 }

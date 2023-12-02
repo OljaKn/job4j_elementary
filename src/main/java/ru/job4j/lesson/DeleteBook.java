@@ -15,6 +15,7 @@ public class DeleteBook implements Menu {
                 int index = books.indexOf(book);
                 books.remove(index);
                 System.out.println("Удаление прошло успешно ");
+                break;
             } else {
                 System.out.println("Не получаеться удалить книгу ");
             }
